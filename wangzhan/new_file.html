@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	
+    <title>个人作品集</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* 导航栏 */
+        nav {
+            background-color: #1a2b42;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #4a90e2;
+        }
+
+        /* 英雄区 */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/1920/1080') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #357abd;
+        }
+
+        /* 快速导航区 */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .quick-nav a {
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .quick-nav a:hover {
+            transform: translateY(-5px);
+        }
+
+        .quick-nav i {
+            font-size: 2rem;
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 作品区 */
+        .works {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .works h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #1a2b42;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .work-info {
+            padding: 1.5rem;
+        }
+
+        .work-info h3 {
+            margin-bottom: 0.5rem;
+            color: #1a2b42;
+        }
+        .work-a{
+        	text-decoration: none;
+        	color: inherit;
+        	display: block;
+        }
+
+        .tags {
+            margin: 1rem 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e8f4ff;
+            color: #4a90e2;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        /* 技能区 */
+        .skills {
+            background-color: #1a2b42;
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .skills h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .skill-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #4a90e2;
+            border-radius: 4px;
+            animation: fillProgress 2s ease-out forwards;
+        }
+
+        @keyframes fillProgress {
+            from { width: 0; }
+        }
+
+        /* 联系方式 */
+        .contact {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1a2b42;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            color: #4a90e2;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #357abd;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1a2b42;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #4a90e2;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #357abd;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href=" ">首页</a ></li>
+            <li><a href="#about">关于我</a ></li>
+            <li><a href="#works">作品</a ></li>
+            <li><a href="#contact">联系我</a ></li>
+        </ul>
+    </nav>
+
+    <!-- 英雄区 -->
+    <section class="hero" id="home">
+        <h1>你好，我是Jackie Yu</h1>
+        <p>专注于用代码创造美好体验的前端学习者</p >
+        <a href="#works" class="btn">查看我的作品</a >
+    </section>
+
+    <!-- 快速导航区 -->
+    <section class="quick-nav">
+        <a href="#works">
+            <i class="fas fa-folder-open"></i>
+            <span>我的作品</span>
+        </a >
+        <a href="#about">
+            <i class="fas fa-user"></i>
+            <span>关于我</span>
+        </a >
+        <a href="#skills">
+            <i class="fas fa-code"></i>
+            <span>我的技能</span>
+        </a >
+        <a href="#contact">
+            <i class="fas fa-phone"></i>
+            <span>联系我</span>
+        </a >
+    </section>
+
+    <!-- 作品区 -->
+    <section class="works" id="works">
+        <h2>我的作品</h2>
+        <div class="work-grid">
+        	<a href="project1.html" target="_blank">
+            <div class="work-card">
+                <img src="img/YYY.jpg" alt="项目1">
+                <div class="work-info">
+                    <h3>静态网页基础展示页</h3>
+                    <p>熟练使用HTML、CSS完成页面布局，掌握盒子模型、渐变、阴影等样式美化</p >
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                </div>
+            </div>
+            </a>
+            <div class="work-card">
+            	<a href="project2.html" target="_blank">
+                <img src="img/JJJ.jpg" alt="项目2">
+                <div class="work-info">
+                    <h3>响应式个人简介网站</h3>
+                    <p>Flex布局+媒体查询适配多端，实现电脑、手机不同屏幕自适应展示</p >
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">响应式</span>
+                    </div>
+                </div>
+            </div>
+            </a>
+            <div class="work-card">
+            	<a href="project3.html" target="_blank">
+                <img src="img/QQQ.jpg" alt="项目3">
+                <div class="work-info">
+                    <h3>Javascript简易交互演示页</h3>
+                    <p>学习DOM元素获取、点击事件绑定，实现页面内容动态切换交互效果</p >
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JS</span>
+                    </div>
+                </div>
+            </div>
+        	</a>
+        </div>
+    </section>
+
+    <!-- 技能区 -->
+    <section class="skills" id="skills">
+        <h2>我的技能</h2>
+        <div class="skill-list">
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>HTML5</span>
+                    <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>CSS3</span>
+                    <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>70%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>响应式设计</span>
+                    <span>80%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-name">
+                    <span>Git</span>
+                    <span>75%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact" id="contact">
+        <h2>联系我</h2>
+        <p>欢迎随时交流合作！</p >
+        <div class="social-links">
+            <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a >
+            <a href="https://github.com/your-github" target="_blank"><i class="fab fa-github"></i></a >
+            <a href="#"><i class="fab fa-weixin"></i></a >
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2027 jackie Yu | 保留所有权利</p >
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a >
+</body>
+</html>

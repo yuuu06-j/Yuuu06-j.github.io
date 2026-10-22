@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目名称2 - 响应式个人网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f7f9fc;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #224b88;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: #183663;
+        }
+        h1 {
+            margin-bottom: 16px;
+            color: #222;
+            font-size: 28px;
+        }
+        .tag-group{
+            margin-bottom:20px;
+        }
+        .tag{
+            display:inline-block;
+            background:#dce8f8;
+            color:#224b88;
+            padding:4px 12px;
+            border-radius:20px;
+            margin-right:8px;
+            font-size:14px;
+        }
+        .desc {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size:16px;
+        }
+        .row{
+            display:flex;
+            gap:20px;
+        }
+        .col{
+            flex:1;
+            background:#fff;
+            padding:30px 20px;
+            border-radius:12px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);
+            text-align:center;
+            transition:0.3s;
+        }
+        .col:hover{
+            transform: translateY(-4px);
+            box-shadow:0 8px 20px rgba(0,0,0,0.1);
+        }
+        .col h3{
+            margin-bottom:10px;
+            color:#224b88;
+        }
+        /* 响应式：屏幕小于768px自动变成上下排列 */
+        @media (max-width:768px){
+            .row{
+                flex-direction:column;
+            }
+        }
+        .tip{
+            margin-top:20px;
+            padding:12px;
+            background:#e8f0fc;
+            border-radius:8px;
+            color:#224b88;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-btn" href="new_file.html">← 返回作品集</a >
+
+    <h1>项目名称2</h1>
+    <div class="tag-group">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">响应式</span>
+    </div>
+    <p class="desc">响应式个人网站项目，使用Flex弹性布局 + @media媒体查询。电脑端三栏并排，手机端自动竖向堆叠，适配电脑、平板、手机多种设备。</p >
+
+    <div class="row">
+        <div class="col">
+            <h3>关于我</h3>
+            <p>个人简介板块</p >
+        </div>
+        <div class="col">
+            <h3>技能</h3>
+            <p>技能展示板块</p >
+        </div>
+        <div class="col">
+            <h3>作品</h3>
+            <p>作品展示板块</p >
+        </div>
+    </div>
+    <div class="tip">💡 你可以缩小浏览器窗口，观察布局自动变化的响应式效果！</div>
+</body>
+</html>

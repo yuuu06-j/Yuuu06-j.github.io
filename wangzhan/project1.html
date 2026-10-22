@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目名称1 - HTML+CSS练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #f7f9fc;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #224b88;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: #183663;
+        }
+        h1 {
+            margin-bottom: 16px;
+            color: #222;
+            font-size: 28px;
+        }
+        .tag-group{
+            margin-bottom:20px;
+        }
+        .tag{
+            display:inline-block;
+            background:#dce8f8;
+            color:#224b88;
+            padding:4px 12px;
+            border-radius:20px;
+            margin-right:8px;
+            font-size:14px;
+        }
+        .desc {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size:16px;
+        }
+        .box-demo{
+            width: 100%;
+            height: 260px;
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
+            border-radius: 14px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            font-size:24px;
+            box-shadow: 0 6px 18px rgba(34,75,136,0.2);
+        }
+        .info-card{
+            background:#fff;
+            padding:24px;
+            border-radius:12px;
+            margin-top:30px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.06);
+        }
+        .info-card h3{
+            margin-bottom:12px;
+            color:#224b88;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-btn" href="new_file.html">← 返回作品集</a >
+
+    <h1>项目名称1</h1>
+    <div class="tag-group">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+    </div>
+    <p class="desc">这是我的第一个网页练习项目，熟练掌握HTML基础标签、盒子模型、渐变背景、圆角、阴影等CSS样式，练习页面基础排版。</p >
+
+    <div class="box-demo">
+        HTML + CSS 基础练习页面
+    </div>
+
+    <div class="info-card">
+        <h3>项目要点</h3>
+        <p>1. 学习div布局、盒子模型margin/padding<br>2. 渐变、圆角、阴影美化页面<br>3. 基础文字排版与配色</p >
+    </div>
+</body>
+</html>
